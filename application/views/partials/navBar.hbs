@@ -1,0 +1,52 @@
+<nav class='navbar text-white bg-dark bg-gradient bg-opacity-75'>
+	<div class='container-fluid'>
+		<form class='d-flex'>
+			<input
+				id='search-text'
+				name='search-text'
+				class='form-control me-2'
+				type='text'
+				placeholder='Search'
+			/>
+			<button
+				id='search-button'
+				class='btn btn-secondary'
+				type='submit'
+				onclick='executeSearch(); return false;'
+			>
+				<i class='bi bi-search'></i>
+			</button>
+		</form>
+
+		<div class='nav-btn-group'>
+			<a href='/postImage'><button id='post-btn' class='btn btn-primary'>
+					<i class='bi bi-upload'></i></button></a>
+
+			<a href='/'><button id='home-btn' class='btn btn-primary'>
+					<i class='bi bi-house-door'></i></button></a>
+
+			{{#if logged}}
+				<a href='/profile'>
+					<button
+						id='portfolio-btn'
+						class='btn btn-primary btn-secondary'
+					>
+						<i class='bi bi-briefcase'></i></button></a>
+				<a href='/users/logout'>
+					<button id='logout-btn' class='btn btn-primary btn-danger'>
+						<i class='bi bi-x-circle'></i></button></a>
+
+			{{else}}
+
+				<a href='/login'>
+					<button id='login-btn' class='btn btn-primary'>
+						<i class='bi bi-person-circle'></i></button></a>
+				<a href='registration'><button
+						id='signup-btn'
+						class='btn btn-primary'
+					>
+						<i class='bi bi-person-plus'></i></button></a>
+			{{/if}}
+		</div>
+	</div>
+</nav>

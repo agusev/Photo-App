@@ -1,0 +1,49 @@
+<div id='post-container'>
+	<img src='/{{currentPost.photopath}}' alt='' id='image-post-image' />
+	<div id='info-message-grid'>
+		<div id='image-post-author' class='info-tags text-muted'>
+			<small>Created by: <i>{{currentPost.username}}</i></small>
+		</div>
+
+		<div id='image-post-date' class='info-tags text-muted'>
+			<small><time>{{currentPost.created}}</time></small>
+		</div>
+
+		<div id='image-post-title' class='info-tags'>
+			<h5>{{currentPost.title}}</h5>
+		</div>
+		<div id='image-post-desc' class='info-tags text-muted'>
+			<p><i>{{currentPost.description}}</i></p>
+		</div>
+	</div>
+
+</div>
+
+<div id='comment-container'>
+	<div id='messages' class='text-muted'>
+		{{#each currentPost.comments}}
+			{{> comment this}}
+		{{/each}}
+
+	</div>
+
+	<div id='comment-area' class='form-floating text-muted'>
+		<textarea
+			class='form-control'
+			placeholder='Leave a comment here'
+			id='comment-text-area'
+			onfocus="document.querySelector('label[for=comment-text-area]').innerText = '' ;"
+			onmouseout="document.querySelector('label[for=comment-text-area]').innerText = 'Leave Your Comment' ;"
+		></textarea>
+		<label for='comment-text-area'>Leave Your Comment</label>
+		<button id='comment-btn' type='button' class='btn btn-primary'><i
+				class='bi bi-chat-left-dots'
+			></i>
+		</button>
+
+	</div>
+
+</div>
+
+
+

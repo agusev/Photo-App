@@ -1,0 +1,162 @@
+<header class='text-muted'>
+	<h1>Register here!</h1>
+</header>
+
+<form
+	id='registration'
+	name='registration'
+	method='POST'
+	action='/users/register'
+	enctype='application/x-www-form-urlencoded'
+>
+	<div id='username' class='form-group'>
+		<label>Username:</label>
+		<input
+			class='form-control'
+			type='text'
+			name='username'
+			size='20'
+			maxlength='50'
+			placeholder='Enter your username'
+			oninput='validateUsername(event.target.value)'
+			required
+		/>
+		<div class='hint'>
+			<div
+				id='username-hint-1'
+				class='alert alert-secondary text-muted'
+			>begins with a letter
+			</div>
+			<div id='username-hint-2' class='alert alert-secondary text-muted'>
+				at least 8 charaters
+			</div>
+
+			<div id='username-hint-3' class='alert alert-secondary text-muted'>
+				only alphanumeric symbols
+			</div>
+
+		</div>
+
+	</div>
+	<div id='email' class='form-group'>
+		<label for='email'>Email:</label>
+		<input
+			class='form-control'
+			type='email'
+			name='email'
+			{{! size='20' }}
+			maxlength='50'
+			placeholder='Enter your email'
+			oninput='validateEmail(event.target.value)'
+			required
+		/>
+		<div class='hint'>
+			<div id='email-hint-1' class='alert alert-secondary text-muted'>
+				Should be an email
+			</div>
+		</div>
+
+	</div>
+
+	<div id='password' class='form-group'>
+		<label for='password'>Password:</label>
+		<input
+			class='form-control'
+			type='password'
+			name='password'
+			size='20'
+			maxlength='50'
+			placeholder='Create password'
+			required
+			oninput='validatePassword(event.target.value)'
+			type='hidden'
+		/>
+		<div class='hint'>
+			<div id='password-hint-1' class='alert alert-secondary text-muted'>
+				at least 8 characters long
+			</div>
+			<div id='password-hint-2' class='alert alert-secondary text-muted'>
+				contain at least one lowercase letter a-z
+			</div>
+			<div id='password-hint-3' class='alert alert-secondary text-muted'>
+				contain at least one uppercase letter A-Z
+			</div>
+			<div id='password-hint-4' class='alert alert-secondary text-muted'>
+				contain at least one digit 0-9
+			</div>
+			<div id='password-hint-5' class='alert alert-secondary text-muted'>
+				contain at least one special charachter _!@#$%^&*
+			</div>
+		</div>
+	</div>
+
+	<div id='password2' class='form-group'>
+		<label for='password2'>Confirm password:</label>
+		<input
+			class='form-control'
+			type='password'
+			name='password2'
+			size='20'
+			maxlength='50'
+			placeholder='Confirm password'
+			required
+			type='hidden'
+			oninput='validatePassword2(event.target.value)'
+		/>
+		<div class='hint'>
+			<div id='password2-hint-1' class='alert alert-secondary text-muted'>
+				passwords should match
+			</div>
+
+		</div>
+	</div>
+
+	<div id='age' class='form-group'>
+		<label for='age'>Your age:</label>
+		<input
+			class='form-control'
+			type='number'
+			name='age'
+			size='3'
+			maxlength='3'
+			min='13'
+			placeholder='Enter your age'
+			value='18'
+			oninput='validateAge(event.target.value)'
+			required
+		/>
+		<div class='hint'>
+			<div id='age-hint-1' class='alert alert-secondary text-muted'>
+				should be older than 13 years old
+			</div>
+		</div>
+	</div>
+
+	<div id='agreement' class='form-group'>
+		<label for='agreement'>
+			<a href='#!'>Agree to TOS and Privacy Rules: </a>
+		</label>
+		<input
+			class='form-check-input mt-1'
+			type='checkbox'
+			name='agreement'
+			required
+			onchange='validateAgreement(event.target)'
+		/>
+		<div class='hint'>
+			<div
+				id='agreement-hint-1'
+				class='alert alert-secondary text-muted'
+			>should agree to the terms</div>
+		</div>
+	</div>
+
+	<input
+		id='submitBtn'
+		class='btn btn-primary'
+		type='submit'
+		value='Submit'
+		onsubmit='validateForm()'
+	/>
+
+</form>

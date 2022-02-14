@@ -1,0 +1,43 @@
+<header class='text-muted'>
+	<h1>Log In!</h1>
+</header>
+
+<form
+	id='login-form'
+	method='POST'
+	action='/users/login'
+	enctype='application/x-www-form-urlencoded'
+>
+
+	<div class='form-group'>
+		<label for='username'>Email address</label>
+		<input
+			id='loginEmail'
+			type='text'
+			class='form-control'
+			aria-describedby='emailHelp'
+			placeholder='Enter email'
+			name='username'
+			required
+		/>
+	</div>
+
+	<div class='form-group'>
+		<label for='password'>Password</label>
+		<input
+			type='password'
+			class='form-control'
+			id='password'
+			placeholder='password'
+			type='hidden'
+			name='password'
+			required
+		/>
+	</div>
+
+	<button
+		id='login-btnForm'
+		type='submit'
+		class='btn btn-primary'
+	>Submit</button>
+</form>
