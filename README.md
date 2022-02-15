@@ -19,4 +19,4 @@
 1. <code>Run npm start</code>
 
 
-![ Alt text](gif. gif) / ! [](gif. gif)
+![ Alt text](./gif. gif) / ! [](./gif. gif)
