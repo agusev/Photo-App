@@ -10,7 +10,7 @@
 
 ## Build Instructions
 
-1. <code>cd ../csc317-termproject-agusev/application/</code>
+1. <code>cd ./Photo-App/application/</code>
 2. <code>npm install</code>
 3. <code>npm run builddb</code>
 
